@@ -1,0 +1,81 @@
+@font-face {
+	font-family: 'Inter';
+	font-weight: 1 999;
+	src: url('/src/lib/assets/Inter-Variable.ttf');
+}
+
+:root {
+	--white: hsla(60, 100%, 99%, 1);
+	--charcoal: hsla(197, 37%, 24%, 1);
+	--cadet-blue: hsla(190, 30%, 53%, 1);
+	--orange-yellow-crayola: hsla(43, 74%, 66%, 1);
+	--sandy-brown: hsla(27, 87%, 67%, 1);
+	--middle-blue-green: hsla(162, 46%, 65%, 1);
+	--color-primary: var(--charcoal);
+	--color-dark: var(--charcoal);
+	--color-secondary: var(--cadet-blue);
+	--color-tertiary: var(--orange-yellow-crayola);
+	--color-bright: var(--middle-blue-green);
+
+	--color-text: var(--white);
+
+	--width-s: 650px;
+	--width-m: 750px;
+	--width-l: 1200px;
+
+	--margin-xs: 8px;
+	--margin-s: 16px;
+	--margin-m: 24px;
+	--margin-lg: 32px;
+	--margin-xl: 48px;
+
+	--padding-xs: 8px;
+	--padding-s: 16px;
+	--padding-m: 24px;
+	--padding-lg: 32px;
+	--padding-xl: 48px;
+
+	--font-xs: 0.5rem;
+	--font-s: 1.1rem;
+	--font-m: 1.2rem;
+	--font-lg: 1.5rem;
+	--font-xl: 2.4rem;
+	--font-xxl: 4rem;
+
+	--container-max-width: 1100px;
+}
+html {
+	background-color: var(--color-dark);
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.6;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: var(--color-text);
+}
+
+p {
+	margin-top: var(--margin-m);
+	font-size: var(--font-s);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+}
+
+a {
+	text-decoration: none;
+	color: var(--purple-navy);
+}
+
+a:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--deep-saffron);
+}

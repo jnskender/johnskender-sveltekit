@@ -1,6 +1,26 @@
+<script context="module">
+	/**
+	 * @type {import('@sveltejs/kit').Load}
+	 */
+	export async function load({ fetch }) {
+		const url = `./articles.json`;
+		const response = await fetch(url);
+
+		if (response.ok) {
+			return {
+				props: { ...(await response.json()) }
+			};
+		}
+
+		return {};
+	}
+</script>
+
 <script>
 	import Avatar from '$lib/components/Avatar.svelte';
 	import profilePicture from '$lib/assets/profile_picture.jpg';
+	import ArticlesList from '$lib/components/ArticlesList.svelte';
+	export let articles;
 </script>
 
 <!-- <div class="hero-box-offset" /> -->
@@ -15,6 +35,8 @@
 	</section>
 	<Avatar />
 </section>
+
+<ArticlesList {articles} />
 
 <style>
 	.hero {

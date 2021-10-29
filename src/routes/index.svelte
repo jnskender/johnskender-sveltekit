@@ -18,60 +18,67 @@
 
 <script>
 	import Avatar from '$lib/components/Avatar.svelte';
-	import profilePicture from '$lib/assets/profile_picture.jpg';
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
 	export let articles;
 </script>
 
-<!-- <div class="hero-box-offset" /> -->
 <section class="hero">
-	<section class="about">
+	<div class="about">
 		<h1>John Skender</h1>
-		<h2>Software Engineer</h2>
-		<p>
+		<p id="job-title">Software Engineer</p>
+		<p id="introduction">
 			I'm currently a software engineer with 4 years experience. Focusing on the ServiceNow domain
 			bringing modern web design and architecture to the platform.
 		</p>
-	</section>
+	</div>
 	<Avatar />
 </section>
 
-<ArticlesList {articles} />
+<section class="recent-articles">
+	<h2>Recent Articles</h2>
+
+	<ArticlesList {articles} />
+
+	<div class="bottom-controls">
+		<a href="/articles">View all articles =></a>
+	</div>
+</section>
 
 <style>
 	.hero {
 		display: flex;
+		flex-direction: column;
 		position: relative;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		padding: var(--padding-lg);
+		gap: var(--margin-xs);
 	}
 
-	.hero p {
+	#introduction {
 		max-width: 45ch;
-	}
-
-	.hero-box-offset {
-		background-color: var(--xanadu-transparent);
-		height: 400px;
-		width: 60%;
-		position: absolute;
-		right: 0;
-		top: 0;
-		z-index: -2;
-	}
-
-	.about {
-		margin: var(--margin-s);
 	}
 
 	.hero h1 {
 		font-size: var(--font-xxl);
 		color: var(--color-text);
+		margin: 0;
+		line-height: 1.2;
 	}
-	.hero h2 {
-		font-size: var(--font-xl);
 
+	#introduction {
+		margin-top: var(--margin-xs);
+	}
+
+	/* float wrapper keepts floated elements in flow */
+	.bottom-controls {
+		display: flex;
+		justify-content: end;
+	}
+
+	#job-title {
+		font-size: var(--font-xl);
+		font-weight: 700;
+		margin: 0;
 		background: -webkit-linear-gradient(to right, var(--xanadu) 0%, var(--deep-saffron) 100%);
 		background: -moz-linear-gradient(to right, var(--color-tertiary) 0%, var(--color-bright) 70%);
 		background: linear-gradient(
@@ -84,8 +91,17 @@
 		-webkit-text-fill-color: transparent;
 	}
 
-	h1,
-	h2 {
-		line-height: 1.2;
+	.recent-articles a {
+		float: right;
+	}
+	.recent-articles h2 {
+		font-size: var(--font-lg);
+	}
+
+	@media (min-width: 650px) {
+		.hero {
+			flex-direction: row;
+			justify-content: flex-start;
+		}
 	}
 </style>

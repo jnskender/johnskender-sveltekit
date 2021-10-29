@@ -5,8 +5,8 @@
 		background-image: url('$lib/assets/profile_picture_tall.jpg');
 		background-size: cover;
 		background-position: top center;
-		width: 250px;
-		height: 250px;
+		min-width: 225px;
+		min-height: 225px;
 		border-radius: 50%;
 		float: left;
 		shape-outside: ellipse();

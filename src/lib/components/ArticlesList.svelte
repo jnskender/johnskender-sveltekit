@@ -1,20 +1,11 @@
 <script>
+	import ArticleCard from '$lib/components/ArticleCard.svelte';
 	export let articles;
 </script>
 
-<h1>Articles</h1>
-
 <section class="articles">
 	{#each articles as article}
-		<section class="article-card">
-			<article>
-				<a href={`articles/${article.url}`}>
-					<h3>{article.title}</h3>
-					<p class="preview">{article.preview}</p>
-					<section>Read more =></section>
-				</a>
-			</article>
-		</section>
+		<ArticleCard {article} />
 	{/each}
 </section>
 
@@ -25,20 +16,9 @@
 		gap: 32px;
 	}
 
-	.article-card {
-		padding: var(--padding-m);
-		border: 1px solid grey;
-	}
-	a {
-		text-decoration: none;
-	}
-	a:hover {
-		text-decoration: none;
-	}
-
-	@media (min-width: 650px) {
+	@media (min-width: 1000px) {
 		.articles {
-			grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+			grid-template-columns: repeat(auto-fill, 1fr);
 		}
 	}
 </style>

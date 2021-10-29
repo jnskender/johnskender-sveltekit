@@ -9,9 +9,11 @@
 <style>
 	nav {
 		margin: 0 auto;
-		max-width: calc(var(--container-max-width));
+		width: 100%;
 		display: flex;
 		justify-content: center;
+		padding: 0 var(--padding-s);
+		margin-bottom: var(--margin-xs);
 	}
 
 	ul {
@@ -19,14 +21,14 @@
 		justify-content: space-between;
 	}
 	li {
-		margin: var(--margin-xs);
 		padding: var(--padding-s);
 		font-size: var(--font-lg);
+		font-weight: var(--bold);
 	}
 
-	@media (max-width: 750px) {
-		ul {
-			display: none;
+	@media (min-width: 650px) {
+		nav {
+			margin-bottom: var(--margin-xl);
 		}
 	}
 </style>

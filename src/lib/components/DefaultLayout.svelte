@@ -1,9 +1,9 @@
 <script>
 	import SEO from '$lib/components/SEO.svelte';
-	import website from '$lib/config/website';
+	import config from '$lib/config/website';
 </script>
 
-<SEO title={website.siteTitle} description={website.siteDescription} />
+<SEO title={config.website.siteTitle} description={config.website.siteDescription} />
 
 <main>
 	<slot />

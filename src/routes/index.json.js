@@ -9,7 +9,6 @@ export async function get() {
   const postsContent = await getArticlesContent(location);
   const articles = await getArticles(postsContent);
 
-  console.log(postsContent)
   return {
     body: {
       articles

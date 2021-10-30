@@ -1,6 +1,6 @@
-<div class="page">
+<main class="page">
 	<slot />
-</div>
+</main>
 
 <style>
 	.page {

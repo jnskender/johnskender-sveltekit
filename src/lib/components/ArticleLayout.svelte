@@ -5,28 +5,27 @@
 	export let isPublished;
 	export let createdOn;
 	export let updatedOn;
+
+	export let article;
 </script>
 
-<SEO {title} description={seoTitle} />
-<section class="article-header">
+<article>
+	<SEO {title} description={seoTitle} />
 	<h1>{title}</h1>
-</section>
-<main>
-	<article>
-		<slot />
-	</article>
-</main>
+	<slot />
+</article>
 
 <style>
-	.article-header {
-		margin: var(--margin-xl);
-	}
 	h1 {
-		text-align: center;
-		font-size: var(--font-xl);
+		font-size: var(--font-xxl);
+		line-height: 1;
+		font-weight: 800;
+		color: white;
+		margin-bottom: var(--margin-m);
 	}
+
 	article {
-		max-width: 65ch;
+		max-width: 55ch;
 		margin: 0 auto;
 	}
 </style>

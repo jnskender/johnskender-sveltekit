@@ -5,13 +5,13 @@
 <!-- markup (zero or more items) goes here -->
 
 <div class="article-card">
-	<article>
+	<section>
 		<a href={`articles/${article.url}`}>
 			<h2>{article.title}</h2>
 			<p class="preview">{article.preview}</p>
 			<span class="read-more">Read more =></span>
 		</a>
-	</article>
+	</section>
 </div>
 
 <style>

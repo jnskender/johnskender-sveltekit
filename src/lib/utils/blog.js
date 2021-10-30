@@ -21,7 +21,7 @@ export const getArticlesContent = (location) => {
 export const getArticles = async (rawArticlesContent) => {
   return await Promise.all(rawArticlesContent.map(async (article) => {
     const compiledContent = await compile(article.content);
-    const { title, seoTitle } = compiledContent.data.fm; //grab frontmatter properties
-    return { title, url: article.fileName, preview: seoTitle };
+    const { title, seoTitle, image } = compiledContent.data.fm; //grab frontmatter properties
+    return { title, url: article.fileName, preview: seoTitle, image };
   }))
 }

@@ -3,44 +3,58 @@
   title: "Use moment.js in ServiceNow"
   seoTitle: "Learn how to use one of the most popular third party libraries,
   moment.js, in ServiceNow. You'll be able to utilize handy date utilities in
-  client scripts, business rules, and script includes after this guide"
+  client scripts, business rules, and script includes after this guide."
+  image: "moment.png"
   isPublished: false
   createdOn: 2020-09-22
   updatedOn: 2020-09-22
 ---
 
-<script>
- import Counter from "$lib/components/Counter.svelte"
-</script>
-
 As most developers know, working with dates, time, and timezones can be one of the most frustrating aspects of any program. ServiceNow includes some decent out of box [API's for working with GlideDateTime objects](https://developer.servicenow.com/dev.do#!/reference/api/orlando/server_legacy/c_GlideDateTimeAPI?navFilter=glidedatetime), but often you'll find that they aren't quite as robust as you'd like.
 
 When GlideDateTime methods don't quite cut it, we can rely on the world's most popular library for parsing, validating, and manipulating dates and time in javascript: [Moment.js](https://momentjs.com/)
 
+
 It's fairly quick to get started using moment.js in both client and server side code. We'll walk through the process of getting it installed and briefly show how you can create a moment object from a GlideDateTime field and vice versa.
-
-This post will be split into three parts
-
-- [Client Side](#client-side)
-- [Server Side](#server-side)
-- [Basic Usage](#basic-usage)
-- [Helpful Links](#helpful-links)
 
 UI scripts will make the library available in the client (UI policies, UI actions, Client Scripts, etc) and Script Includes will make it available in Server code (Other Script Includes, Business Rules, Fix Scripts, etc).
 
-## Client Side
+## Using Moment Client Side
+
+### UI Script Setup
 
 Navigate to <https://momentjs.com/downloads/moment.min.js> and copy the entirety of the minified library.
 
-Create a new [UI Script](https://docs.servicenow.com/bundle/orlando-application-development/page/script/client-scripts/concept/c_UIScripts.html) in your instance and paste the contents of the script into the script field. You'll need to set the following properties on the script
+Create a new [UI Script](https://docs.servicenow.com/bundle/orlando-application-development/page/script/client-scripts/concept/c_UIScripts.html) in your instance and paste the contents of the script into the script field.
 
-* Global = true
-* UI Type = Desktop
+Setup your UI Script with the following options:
+
+* Global = false ```// Only use global UI scripts when you are willing to accept the performance implications of loading the UI script on every page for every user```
+* UI Type = Desktop ```//This will make it available everywhere but mobile and Service Portal```
 * Active = true
-* Name = moment
+* Name = moment.js
 
+It should look like this when you're finished:
 
-You should now have access to the `moment` object anywhere client side throughout the platform.
+![UI Script Example](/src/lib/assets/blog/moment/ui-script-example.png)
+
+### Usage
+
+When this ```sys_ui_script``` record is inserted into ServiceNow, ServiceNow performs a little bit of undocumented magic.
+
+It hosts the code directly on the instance and appends the ```.jsdbx``` to it.
+
+So in my test instance I can view the source code I uploaded by navigating to
+```https://myinstance.service-now.com/moment.js.jsdbx```
+
+To access moment in a client script via this UI action we're going to leverage an out of the box global API: [ScriptLoader](https://docs.servicenow.com/bundle/rome-application-development/page/app-store/dev_portal/API_reference/ScriptLoader/concept/c_ScriptLoaderAPI.html#c_ScriptLoaderAPI).
+
+```ScriptLoader.getScripts()``` is an [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) that takes two parameters
+
+1. An array of scripts or a single string of the script you want to load.
+2. A callback function that runs when the function is finished loading your script.
+
+**Note**: You need to add the extension .jsdbx to the name of your UI script for Script loader to find it. This is undocumented and is a large source of confusion for most users of the API.
 
 To test this, open the javascript executor
 
@@ -49,10 +63,14 @@ To test this, open the javascript executor
 
 In the executor window type
 
-#### **`index.js`**
-```js
-console.log("Todays date: " + moment().format())
+#### index.js
+```javascript
+ScriptLoader.getScripts('moment.js.jsdbx', function () {
+  console.log("Today's date: " + moment().format())
+});
 ```
+
+![Executor Example](/src/lib/assets/blog/moment/executor.png)
 
 then click "Run my code"
 
@@ -157,9 +175,4 @@ if (changeGR.next()) {
 }
 ```
 
-## Helpful Links
-
-* [Moment.js docs](https://momentjs.com/)
-* [GlideDateTime API docs](https://developer.servicenow.com/dev.do#!/reference/api/orlando/server_legacy/c_GlideDateTimeAPI?navFilter=glidedatetime)
-* [UI Scripts](https://docs.servicenow.com/bundle/orlando-application-development/page/script/client-scripts/concept/c_UIScripts.html)
-* [Script Includes](https://docs.servicenow.com/bundle/paris-application-development/page/script/server-scripting/concept/c_ScriptIncludes.html)
+These principles should apply to any 3rd party libraries such as lodash or Underscore.js

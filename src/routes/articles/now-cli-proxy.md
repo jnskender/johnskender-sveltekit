@@ -1,4 +1,5 @@
 ---
+layout: article
 title: How to use the ServiceNow CLI behind a proxy server
 slug: now-cli-proxy
 socialImage: /media/now-cli-proxy.png

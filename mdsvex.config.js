@@ -1,3 +1,6 @@
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeSlug from "rehype-slug";
+
 const config = {
   "extensions": [".svelte.md", ".md", ".svx"],
 
@@ -9,7 +12,7 @@ const config = {
    _: "src/lib/components/DefaultLayout.svelte"
   },
   "remarkPlugins": [],
-  "rehypePlugins": []
+  "rehypePlugins": [rehypeExternalLinks, rehypeSlug]
 };
 
 export default config;

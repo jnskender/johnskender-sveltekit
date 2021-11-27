@@ -8,7 +8,7 @@ import { compile } from "mdsvex"
  */
 export const getArticlesContent = (location) => {
   return fs.readdirSync(location)
-    .filter((file) => file.match(/.*\.(md?)/ig)) //get all markdown files
+    .filter((file) => file.match(/.*\.(svx?)/ig)) //get all markdown files
     .map((file) => {
       return {
         fileName: path.parse(file).name,
@@ -21,7 +21,7 @@ export const getArticlesContent = (location) => {
 export const getArticles = async (rawArticlesContent) => {
   return await Promise.all(rawArticlesContent.map(async (article) => {
     const compiledContent = await compile(article.content);
-    const { title, seoTitle, image } = compiledContent.data.fm; //grab frontmatter properties
-    return { title, url: article.fileName, preview: seoTitle, image };
+    const { title, seoTitle, image, shortDescription } = compiledContent.data.fm; //grab frontmatter properties
+    return { title, url: article.fileName, preview: shortDescription || seoTitle, image, shortDescription };
   }))
 }

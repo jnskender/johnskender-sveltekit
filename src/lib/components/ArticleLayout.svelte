@@ -9,7 +9,7 @@
 	export let article;
 </script>
 
-<article>
+<article class="line-numbers">
 	<SEO {title} description={seoTitle} />
 	<h1>{title}</h1>
 	<slot />

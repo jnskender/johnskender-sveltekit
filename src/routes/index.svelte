@@ -18,9 +18,15 @@
 
 <script>
 	import Avatar from '$lib/components/Avatar.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
 	export let articles;
 </script>
+
+<SEO
+	title="Home"
+	description="Interactive tutorials for developers. Focus on ServiceNow, Javascript, and more!"
+/>
 
 <section class="hero">
 	<div class="about">
@@ -78,6 +84,7 @@
 	#job-title {
 		font-size: var(--font-xl);
 		font-weight: 700;
+		line-height: 1.2;
 		margin: 0;
 		background: -webkit-linear-gradient(to right, var(--xanadu) 0%, var(--deep-saffron) 100%);
 		background: -moz-linear-gradient(to right, var(--color-tertiary) 0%, var(--color-bright) 70%);

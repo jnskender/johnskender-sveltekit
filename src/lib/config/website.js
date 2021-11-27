@@ -1,4 +1,4 @@
-const config = {
+export default {
   website: {
     author: 'John Skender',
     ogLanguage: 'en_US',
@@ -25,5 +25,3 @@ const config = {
     },
   ]
 };
-
-export { config as default };

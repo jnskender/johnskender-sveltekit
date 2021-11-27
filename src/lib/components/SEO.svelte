@@ -1,9 +1,10 @@
 <script>
-	import website from '$lib/config/website';
+	import config from '$lib/config/website';
 
-	const { siteLanguage, siteTitle } = website;
 	export let title;
 	export let description;
+
+	const { siteLanguage, siteTitle } = config.website;
 </script>
 
 <svelte:head>

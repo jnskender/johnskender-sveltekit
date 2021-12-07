@@ -1,11 +1,11 @@
 import { mdsvex } from "mdsvex";
-import adapter from '@sveltejs/adapter-netlify';
+import vercel from '@sveltejs/adapter-vercel';
 import mdsvexConfig from "./mdsvex.config.js";
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   "extensions": [".svelte", ...mdsvexConfig.extensions],
   kit: {
-    adapter: adapter(),
+    adapter: vercel(),
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte'
   },

@@ -9,3 +9,4 @@ package-lock.json
 functions
 build
 /.netlify
+/.vercel_build_output

@@ -3,8 +3,7 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const url = `./index.json`;
-		const response = await fetch(url);
+		const response = await fetch('./index.json');
 
 		if (response.ok) {
 			return {

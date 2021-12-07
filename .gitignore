@@ -8,4 +8,4 @@ package-lock.json
 /.vscode
 functions
 build
-/.netflify
+/.netlify

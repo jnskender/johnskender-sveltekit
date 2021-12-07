@@ -1,5 +1,6 @@
 <script>
 	import SEO from '$lib/components/SEO.svelte';
+
 	export let title;
 	export let seoTitle;
 	export let isPublished;
@@ -9,7 +10,7 @@
 	export let article;
 </script>
 
-<article class="line-numbers">
+<article>
 	<SEO {title} description={seoTitle} />
 	<h1>{title}</h1>
 	<slot />
@@ -22,10 +23,6 @@
 		font-weight: 800;
 		color: white;
 		margin-bottom: var(--margin-m);
-	}
-
-	article {
-		max-width: 55ch;
-		margin: 0 auto;
+		text-align: center;
 	}
 </style>

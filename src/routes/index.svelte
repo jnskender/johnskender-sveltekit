@@ -25,7 +25,7 @@
 
 <SEO
 	title="Home"
-	description="Interactive tutorials for developers. Focus on ServiceNow, Javascript, and more!"
+	description="Tutorials and interactive articles focusing on ServiceNow, Javascript, and Web Development."
 />
 
 <section class="hero">
@@ -33,8 +33,10 @@
 		<h1>John Skender</h1>
 		<p id="job-title">Software Engineer</p>
 		<p id="introduction">
-			I'm currently a software engineer with 4 years experience. Focusing on the ServiceNow domain
-			bringing modern web design and architecture to the platform.
+			Welcome! My name is John Skender. I’m a software engineer specializing in web technologies
+			across the entire stack. I design and develop custom web applications focusing on creating
+			great user experiences. Here you'll find articles and guides related to ServiceNow and it's
+			surrounding technologies.
 		</p>
 	</div>
 	<Avatar />

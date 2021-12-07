@@ -1,5 +1,6 @@
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
+import prism from "remark-prism";
 
 const config = {
   "extensions": [".svelte.md", ".md", ".svx"],

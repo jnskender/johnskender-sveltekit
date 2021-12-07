@@ -69,10 +69,14 @@ To test this, open the javascript executor
 
 In the executor window type
 
-```javascript
+```js
 ScriptLoader.getScripts('moment.js.jsdbx', function () {
   console.log("Today's date: " + moment().format())
 });
+```
+
+```js
+const hello = (something) => something.else;
 ```
 
 ![Executor Example](/blog/moment/executor.png)
@@ -114,7 +118,7 @@ To get started open a [background script](https://developer.servicenow.com/blog.
 
 First we need to grab a record from the system that has at least one column of type Date/Time. Change Request has one out of the box called Planned start date(start_date). Lets grab a change that has that value populated.
 
-```javascript
+```js
 var changeGR = new GlideRecord("change_request");
 changeGR.addNotNullQuery("start_date");
 changeGR.addLimit(1);

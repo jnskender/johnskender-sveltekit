@@ -2,6 +2,7 @@
 	font-family: 'Inter';
 	font-weight: 1 999;
 	src: url('/src/lib/assets/Inter-Variable.ttf');
+	font-display: swap;
 }
 
 :root {

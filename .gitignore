@@ -10,3 +10,5 @@ functions
 build
 /.netlify
 /.vercel_build_output
+localhost*
+vigilant*

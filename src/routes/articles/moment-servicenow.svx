@@ -42,8 +42,6 @@ Setup your UI Script with the following options:
 
 It should look like this when you're finished:
 
-![UI Script Example](/moment/ui-script.png)
-
 ### Usage
 
 When this ```sys_ui_script``` record is inserted into ServiceNow, ServiceNow performs a little bit of undocumented magic.

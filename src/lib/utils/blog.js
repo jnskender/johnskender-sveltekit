@@ -6,16 +6,18 @@ import { compile } from "mdsvex"
  * @param {string} location the path where the articles are stored
  * @returns {String[]} raw file system content for article content;
  */
-export const getArticlesContent = (location) => {
-  return fs.readdirSync(location)
-    .filter((file) => file.match(/.*\.(svx?)/ig)) //get all markdown files
-    .map((file) => {
-      return {
-        fileName: path.parse(file).name,
-        content: fs.readFileSync(path.join(location, file), { encoding: 'utf-8' }),
-      }
-    })
-};
+export const getArticlesContent =
+  (location) => {
+
+    return fs.readdirSync(location)
+      .filter((file) => file.match(/.*\.(svx?)/ig)) //get all markdown files
+      .map((file) => {
+        return {
+          fileName: path.parse(file).name,
+          content: fs.readFileSync(path.join(location, file), { encoding: 'utf-8' }),
+        }
+      })
+  };
 
 
 export const getArticles = async (rawArticlesContent) => {

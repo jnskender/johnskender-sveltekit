@@ -3,11 +3,18 @@
 	export let articles;
 </script>
 
-<section class="articles">
-	{#each articles as article}
-		<ArticleCard {article} />
-	{/each}
-</section>
+{#if articles}
+	<!-- content here -->
+	<section class="articles">
+		{#each articles as article}
+			<ArticleCard {article} />
+		{/each}
+	</section>
+{:else}
+	<section>
+		<p>Oops! Couldn't load articles right now.</p>
+	</section>
+{/if}
 
 <style>
 	.articles {

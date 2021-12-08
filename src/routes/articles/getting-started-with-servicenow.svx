@@ -22,7 +22,7 @@ This is a __must__ if you want to learn how to develop on the platform. ServiceN
 
 To really get an understanding of the platform, you'll need to start getting your hands dirty and get to developing! A lot of people will tell you that you need to take the ServiceNow paid administrator course to learn the platform. Take it from someone who's taken it, save yourself thousands of dollars and complete the following three __FREE__ courses on the ServiceNow developer website.
 
-  1. [New to ServiceNow](vicenow.com/dev.do#!/learn/learning-plans/orlando/new_to_servicenow)
+  1. [New to ServiceNow](https:/servicenow.com/dev.do#!/learn/learning-plans/orlando/new_to_servicenow)
   2. [ServiceNow Administrator](https://developer.servicenow.com/dev.do#!/learn/learning-plans/orlando/servicenow_administrator)
   3. [ServiceNow Application Developer](https://developer.servicenow.com/dev.do#!/learn/learning-plans/orlando/servicenow_application_developer)
 

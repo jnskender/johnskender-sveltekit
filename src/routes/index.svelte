@@ -18,6 +18,7 @@
 <script>
 	import Avatar from '$lib/components/Avatar.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import Test from '$lib/components/Test.svelte';
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
 	export let articles;
 </script>

@@ -1,15 +1,11 @@
-<div id="avatar" />
+<script>
+	import image from '$lib/assets/images/me.jpg?width=225&height=225&format=webp';
+</script>
+
+<img src={image} alt="John Skender" />
 
 <style>
-	#avatar {
-		background-image: url('$lib/assets/profile_picture_tall.jpg');
-		background-size: cover;
-		background-position: top center;
-		min-width: 225px;
-		min-height: 225px;
+	img {
 		border-radius: 50%;
-		float: left;
-		shape-outside: ellipse();
-		background-clip: content-box;
 	}
 </style>

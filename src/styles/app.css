@@ -150,11 +150,6 @@ image {
 	margin-bottom: var(--margin-m);
 }
 
-image,
-img {
-	margin: var(--margin-m) 0;
-}
-
 /* Inline code */
 article :not(pre) code {
 	color: var(--white);

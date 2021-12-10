@@ -1,11 +1,13 @@
 import config from '$lib/config/website';
 import { getArticles } from "$lib/utils/blog.js"
 
-const articles = await getArticles();
-const websiteURl = config.website.url;
-const pages = ['articles']
 
 export async function get() {
+
+  const articles = await getArticles();
+  const websiteURl = config.website.url;
+  const pages = ['articles']
+
   const headers = {
     'Cache-Control': 'max-age=0, s-maxage=3600',
     'Content-Type': 'application/xml',
@@ -27,16 +29,16 @@ export async function get() {
       <priority>0.7</priority>
     </url>
     ${pages
-      .map(
-        page => `
+        .map(
+          page => `
     <url>
       <loc>${websiteURl}/${page}</loc>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
     </url>
     `
-      )
-      .join('')}
+        )
+        .join('')}
     ${articles
         .map(article =>
           !article.isPublished

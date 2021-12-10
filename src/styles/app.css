@@ -1,13 +1,13 @@
 @font-face {
 	font-family: 'Inter';
 	font-weight: 1 999;
-	src: url('fonts/assets/Inter-Variable.ttf');
+	src: url('/fonts/Inter-Variable.ttf');
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Cascadia Code';
 	font-weight: 1 999;
-	src: url('fonts/assets/CascadiaCode-Regular.ttf');
+	src: url('/fonts/CascadiaCode-Regular.ttf');
 	font-display: swap;
 }
 

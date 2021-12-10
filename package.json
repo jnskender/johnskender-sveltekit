@@ -24,6 +24,7 @@
   "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^1.28.5",
+    "feather-icons": "^4.28.0",
     "rehype-external-links": "^1.0.0",
     "rehype-slug": "^5.0.0"
   }

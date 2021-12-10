@@ -1,6 +1,7 @@
 export default {
   website: {
     author: 'John Skender',
+    url: "https://www.johnskender.com",
     ogLanguage: 'en_US',
     siteLanguage: 'en-US',
     siteTitle: 'John Skender',

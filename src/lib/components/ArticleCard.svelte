@@ -7,7 +7,7 @@
 
 <div class="article-card">
 	<article>
-		<a href={`articles/${article.url}`}>
+		<a href={`articles/${article.slug}`}>
 			<h2>{article.title}</h2>
 			<p class="preview">{article.preview}</p>
 			<div class="read-more">

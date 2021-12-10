@@ -1,9 +1,16 @@
-<nav>
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/articles">Articles</a></li>
-	</ul>
-</nav>
+<script>
+	import HR from '$lib/components/HR.svelte';
+</script>
+
+<section class="header-nav">
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/articles">Articles</a></li>
+		</ul>
+	</nav>
+	<HR />
+</section>
 
 <style>
 	nav {
@@ -12,6 +19,9 @@
 		display: flex;
 		justify-content: center;
 		padding: 0 var(--padding-s);
+	}
+
+	.header-nav {
 		margin-bottom: var(--margin-xs);
 	}
 
@@ -26,7 +36,7 @@
 	}
 
 	@media (min-width: 650px) {
-		nav {
+		.header-nav {
 			margin-bottom: var(--margin-xl);
 		}
 	}

@@ -18,7 +18,7 @@
 <script>
 	import Avatar from '$lib/components/Avatar.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-	import Test from '$lib/components/Test.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
 	export let articles;
 </script>
@@ -48,7 +48,7 @@
 	<ArticlesList {articles} />
 
 	<div class="bottom-controls">
-		<a href="/articles">View all articles =></a>
+		<a href="/articles">View all articles <Icon name="arrow-right" /></a>
 	</div>
 </section>
 
@@ -59,7 +59,7 @@
 		position: relative;
 		justify-content: space-between;
 		align-items: center;
-		gap: var(--margin-xs);
+		gap: var(--margin-s);
 	}
 
 	#introduction {
@@ -70,7 +70,7 @@
 		font-size: var(--font-xxl);
 		color: var(--color-text);
 		margin: 0;
-		line-height: 1.2;
+		line-height: 1;
 	}
 
 	#introduction {
@@ -100,8 +100,10 @@
 		-webkit-text-fill-color: transparent;
 	}
 
-	.recent-articles a {
-		float: right;
+	.bottom-controls a {
+		display: flex;
+		align-items: center;
+		gap: var(--margin-xs);
 	}
 	.recent-articles h2 {
 		font-size: var(--font-lg);

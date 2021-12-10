@@ -1,5 +1,5 @@
 <script>
-	import image from '$lib/assets/images/me.jpg?width=225&height=225&format=webp';
+	import image from '$lib/assets/images/me.jpg?width=250&height=250&format=webp';
 </script>
 
 <img src={image} alt="John Skender" />

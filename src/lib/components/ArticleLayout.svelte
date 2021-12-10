@@ -3,11 +3,6 @@
 
 	export let title;
 	export let seoTitle;
-	export let isPublished;
-	export let createdOn;
-	export let updatedOn;
-
-	export let article;
 </script>
 
 <article>
@@ -24,5 +19,16 @@
 		color: white;
 		margin-bottom: var(--margin-m);
 		text-align: center;
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: var(--font-xl);
+		}
+	}
+	@media (max-width: 400px) {
+		h1 {
+			font-size: var(--font-lg);
+		}
 	}
 </style>

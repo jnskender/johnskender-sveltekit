@@ -1,4 +1,5 @@
 <script>
+	import Icon from '$lib/components/Icon.svelte';
 	export let article;
 </script>
 
@@ -9,7 +10,10 @@
 		<a href={`articles/${article.url}`}>
 			<h2>{article.title}</h2>
 			<p class="preview">{article.preview}</p>
-			<span class="read-more">Read more =></span>
+			<div class="read-more">
+				<p>Read more</p>
+				<Icon name="arrow-right" />
+			</div>
 		</a>
 	</article>
 </div>
@@ -17,7 +21,7 @@
 <style>
 	.article-card {
 		padding: var(--padding-m);
-		border: 1px solid grey;
+		border: var(--border-light);
 	}
 
 	h2 {
@@ -39,6 +43,9 @@
 	}
 
 	.read-more {
-		float: right;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: var(--margin-xs);
 	}
 </style>

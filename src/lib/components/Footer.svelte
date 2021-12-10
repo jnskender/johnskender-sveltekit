@@ -1,8 +1,9 @@
 <script>
 	import config from '$lib/config/website.js';
+	import HR from '$lib/components/HR.svelte';
 </script>
 
-<section class="break" />
+<HR />
 
 <section class="footer">
 	<div class="seperator">
@@ -25,13 +26,6 @@
 </section>
 
 <style>
-	.break {
-		margin: var(--margin-xl) auto;
-		min-width: 50%;
-		max-width: 75%;
-		border-bottom: 1px solid var(--color-secondary);
-	}
-
 	.seperator {
 		margin: 0 var(--margin-xl);
 	}
@@ -39,7 +33,7 @@
 		display: flex;
 		justify-content: center;
 		width: 100%;
-		margin: var(--margin-m) 0;
+		padding: var(--padding-m) 0;
 	}
 
 	.title {

@@ -4,7 +4,6 @@
 </script>
 
 {#if articles}
-	<!-- content here -->
 	<section class="articles">
 		{#each articles as article}
 			<ArticleCard {article} />

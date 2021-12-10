@@ -10,9 +10,6 @@
 ---
 
 <script>
-  // import executor from "/blog/moment/executor.png"
-
-  // import uiScript from "blog/moment/ui-script-example.png"
 
 </script>
 
@@ -29,18 +26,16 @@ UI scripts will make the library available in the client (UI policies, UI action
 
 ### UI Script Setup
 
-Navigate to <https://momentjs.com/downloads/moment.min.js> and copy the entirety of the minified library.
+Navigate to https://momentjs.com/downloads/moment.min.js and copy the entirety of the minified library.
 
 Create a new [UI Script](https://docs.servicenow.com/bundle/orlando-application-development/page/script/client-scripts/concept/c_UIScripts.html) in your instance and paste the contents of the script into the script field.
 
 Setup your UI Script with the following options:
 
-* Global = false ```// Only use global UI scripts when you are willing to accept the performance implications of loading the UI script on every page for every user```
+* Global = false ```//Only use global UI scripts when you are willing to accept the performance implications of loading the UI script on every page for every user```
 * UI Type = Desktop ```//This will make it available everywhere but mobile and Service Portal```
 * Active = true
 * Name = moment.js
-
-It should look like this when you're finished:
 
 ### Usage
 
@@ -60,12 +55,12 @@ To access moment in a client script via this UI action we're going to leverage a
 
 **Note**: You need to add the extension .jsdbx to the name of your UI script for Script loader to find it. This is undocumented and is a large source of confusion for most users of the API.
 
-To test this, open the javascript executor
+To test this, open the [javascript executor](https://community.servicenow.com/community?id=community_blog&sys_id=5f2de6e5dbd0dbc01dcaf3231f961936)
 
 * For Mac press `Ctrl+Shift+j`
 * For Windows press `Alt+Ctrl+Shift+j`
 
-In the executor window type
+In the [executor](https://community.servicenow.com/community?id=community_blog&sys_id=5f2de6e5dbd0dbc01dcaf3231f961936) window type
 
 ```js
 ScriptLoader.getScripts('moment.js.jsdbx', function () {
@@ -73,11 +68,6 @@ ScriptLoader.getScripts('moment.js.jsdbx', function () {
 });
 ```
 
-```js
-const hello = (something) => something.else;
-```
-
-![Executor Example](/blog/moment/executor.png)
 
 then click "Run my code"
 
@@ -87,9 +77,9 @@ If everything was installed successfully you should see the below output in your
 
 ## Server Side
 
-Navigate to [https://raw.githubusercontent.com/jnskender/Moment-ServiceNow/master/moment.min.js](<>) and copy the entirety of the minified library.
+Navigate to https://raw.githubusercontent.com/jnskender/Moment-ServiceNow/master/moment.min.js and copy the entirety of the minified library.
 
-Create a new [Script Include](https://docs.servicenow.com/bundle/paris-application-development/page/script/server-scripting/concept/c_ScriptIncludes.html)   (sys_script_include) and name it "Moment".
+Create a new [Script Include](https://docs.servicenow.com/bundle/paris-application-development/page/script/server-scripting/concept/c_ScriptIncludes.html)   (sys_script_include) and name it "moment.min.js".
 
 Delete all auto generated code from the new script include.
 
@@ -99,7 +89,7 @@ Paste the contents of the minified library to the script include.
 To test that we've correctly made this available on the server open a [background script](https://developer.servicenow.com/blog.do?p=/post/training-scriptsbg/) window or an [xplore window](https://developer.servicenow.com/connect.do#!/share/contents/9650888_xplore_developer_toolkit?t=PRODUCT_DETAILS).
 
 ```js
-gs.include("Moment");//makes the code available to our script
+gs.include("moment.min.js");//makes the code available to our script
 
 gs.print(moment().format()); //prints todays date in standard format
 ```
@@ -114,11 +104,13 @@ To show you how you can get started using moment in relation to ServiceNow, we'l
 
 To get started open a [background script](https://developer.servicenow.com/blog.do?p=/post/training-scriptsbg/) window or an [xplore window](https://developer.servicenow.com/connect.do#!/share/contents/9650888_xplore_developer_toolkit?t=PRODUCT_DETAILS).
 
-First we need to grab a record from the system that has at least one column of type Date/Time. Change Request has one out of the box called Planned start date(start_date). Lets grab a change that has that value populated.
+First we need to grab a record from the system that has at least one column of type Date/Time. Change Request has one out of the box called Planned Start Date (start_date). Lets grab a change that has that value populated.
 
 ```js
 var changeGR = new GlideRecord("change_request");
+//make sure we get a change that has a populated start_date
 changeGR.addNotNullQuery("start_date");
+//we only need one so let's use best practice to limit our query to 1 to increase performance
 changeGR.addLimit(1);
 changeGR.query();
 if (changeGR.next()) {
@@ -127,9 +119,6 @@ if (changeGR.next()) {
 ```
 
 In this case we're just printing out the number to make sure we have a record that meets that condition. If you don't, please create a change and fill out that field to meet the above conditions.
-
-For my change record, the initial start date looks like
-
 
 Inside of your `if` statement we'll then need to create a moment instance by passing in the raw value of start date. Because ServiceNow stores date times as UTC internally, we will need to specify to moment that we are parsing a UTC value.
 
@@ -145,7 +134,7 @@ Printing the value `startDate.format()` should return the moment formatted strin
 
 Now that we have a moment instance we can easily adjust the time to our liking using moments built in manipulation methods such as add and subtract.
 
-Lets add 1 day and subtract 2 hours.
+To show how we can manipulate time, we'll add 1 day and subtract 2 hours.
 
 ```javascript
 startDate.add("1", "d").subtract("2", "h");
@@ -164,21 +153,37 @@ changeGR.update();
 If we run this script in the background we should see the UI show that Planned start has had 1 day added and 2 hours subtracted.
 
 
-The entire script should look something like
+The final script should look similar to this:
 
 ```javascript
 gs.include("Moment");
 
 var changeGR = new GlideRecord("change_request");
+//make sure we get a change that has a populated start_date
 changeGR.addNotNullQuery("start_date");
+//we only need one so let's use best practice to limit our query to 1 to increase performance
 changeGR.addLimit(1);
 changeGR.query();
 if (changeGR.next()) {
+
+  //populate a moment object from the change records start time
   var startDate = moment.utc(changeGR.getValue("start_date"));
+
+  //use moment to manipulate the day, hour, etc to our use case
   startDate.add("1", "d").subtract("2", "h");
+
+  //updat the value of our change requests start date to our manipulated moment time
   changeGR.setValue("start_date", startDate.format("YYYY-MM-DD HH:mm:ss"));
+
   changeGR.update();
 }
 ```
+
+You can learn more about how to format and manipulate time using moment from [their own documentation](https://momentjs.com/).
+
+**Note**
+The maintainers of moment have declared the [project will no longer be receiving major updates.](https://momentjs.com/docs/#/-project-status/) This is mainly due to the fact that the new [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) is now available and provides similiar functionality.
+
+ServiceNow is still stuck on es5 javascript runtime so I still believe that moment is the current best option for time manipulation and formatting in ServiceNow.
 
 These principles should apply to any 3rd party libraries such as lodash or Underscore.js

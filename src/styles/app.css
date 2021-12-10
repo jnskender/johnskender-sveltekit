@@ -112,6 +112,11 @@ article pre {
 	grid-column: 1 / -1;
 }
 
+article img {
+	grid-column: 1 / -1;
+	margin: auto;
+}
+
 article a {
 	color: var(--color-tertiary);
 	box-shadow: 0px 0px 0px var(--color-tertiary);
@@ -136,6 +141,10 @@ article h2 {
 	font-size: var(--font-xl);
 }
 
+article p {
+	margin-bottom: var(--margin-lg);
+}
+
 article ul,
 ol,
 image {
@@ -154,4 +163,5 @@ pre[class*='language-'] {
 	font-family: Fira Code, Roboto Mono, monospace;
 	border-radius: 5px;
 	color: var(--white);
+	margin-bottom: var(--margin-lg);
 }

@@ -1,20 +1,23 @@
-# create-svelte
+# John Skender | Personal Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+My personal website for sharing information and playing with new technology.
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Built With
+- [SvelteKit](https://kit.svelte.dev/)
+- [mdsvex](https://kit.svelte.dev/)
+  - For rendering markdown articles with the ability to include svelte components in the markup
+- [vite imagetools](https://github.com/JonasKruckenberg/imagetools)
+  - Crazy fast and easy image processing and optimization
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
+## Deployed with Netlify
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aa197719-3261-4a3a-b14d-a12ee00a51d8/deploy-status)](https://app.netlify.com/sites/vigilant-mcnulty-bdd0bd/deploys)
 
-> Note: the `@next` is temporary
+  - [@sveltjs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
+    - SSG using adapter static
+- [netlify sitemap plugin](https://github.com/netlify-labs/netlify-plugin-sitemap)
+  - generating a sitemap automatically on each build
 
 ## Developing
 

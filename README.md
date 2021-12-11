@@ -1,5 +1,7 @@
 # John Skender | Personal Website
 
+https://www.johnskender.com
+
 My personal website for sharing information and playing with new technology.
 
 
@@ -12,7 +14,7 @@ My personal website for sharing information and playing with new technology.
 
 
 ## Deployed with Netlify
-[![Netlify Status](https://api.netlify.com/api/v1/badges/aa197719-3261-4a3a-b14d-a12ee00a51d8/deploy-status)](https://app.netlify.com/sites/vigilant-mcnulty-bdd0bd/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e3a84d5e-7cde-4de6-9041-4d5e7d4e83ec/deploy-status)](https://app.netlify.com/sites/johnskender/deploys)
 
   - [@sveltjs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
     - SSG using adapter static

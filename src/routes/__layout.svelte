@@ -14,6 +14,17 @@
 		href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600;700;800&display=swap"
 		rel="stylesheet"
 	/>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVLYV7EXZM"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-SVLYV7EXZM');
+	</script>
 </svelte:head>
 
 <NavBar />

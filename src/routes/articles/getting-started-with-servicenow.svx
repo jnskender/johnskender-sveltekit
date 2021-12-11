@@ -34,12 +34,9 @@ There are a handful of books I attribute to my success as an application develop
 
 Other honorable mentions
 
--[Learning ServiceNow](https://www.amazon.com/dp/1983092134/ref=cm_sw_em_r_mt_dp_U_kHFcFbZ8MEABE) by Tim Woodruff
-
-
--[The Witch Doctor's Guide to ServiceNow](https://www.amazon.com/Witch-Doctors-Guide-ServiceNow-Knowledge/dp/179462631X/ref=sr_1_3?dchild=1&keywords=servicenow&qid=1594489656&s=books&sr=1-3) by Goran Lundqvist
-
--[Ryan Mcdermotts Clean Code Repo](https://github.com/ryanmcdermott/clean-code-javascript) (Not ServiceNow related but extremely valuable as a javascript developer)
+- [Learning ServiceNow](https://www.amazon.com/dp/1983092134/ref=cm_sw_em_r_mt_dp_U_kHFcFbZ8MEABE) by Tim Woodruff
+- [The Witch Doctor's Guide to ServiceNow](https://www.amazon.com/Witch-Doctors-Guide-ServiceNow-Knowledge/dp/179462631X/ref=sr_1_3?dchild=1&keywords=servicenow&qid=1594489656&s=books&sr=1-3) by Goran Lundqvist
+- [Ryan Mcdermotts Clean Code Repo](https://github.com/ryanmcdermott/clean-code-javascript) (Not ServiceNow related but extremely valuable as a javascript developer)
 
 ## 4. Develop!
 If you've completed all of the previous, you should have a far better grasp of ServiceNow than many principled engineers in the same space can claim. All that is left to do now is to do what you would do when learning any other new technology. Build something! Does your company have a business process that is managed by email and spreadsheets. Build a custom app! Want to dive deep into angular? Do a todo list in Service Portal. The point here is that these are unguided undefined projects that you are in full control. You will get stuck, but that's the point. You need to learn how to debug common issues, learn to read ServiceNow's API documentation, and feel for yourself just how easy it is to build incredible experiences on the platform.

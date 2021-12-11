@@ -141,15 +141,15 @@ article h2 {
 	font-size: var(--font-xl);
 }
 
-article p {
-	margin-bottom: var(--margin-lg);
-}
-
 article ul,
 ol,
 image {
 	list-style: inside;
 	margin-bottom: var(--margin-m);
+}
+
+.article p {
+	margin-bottom: var(--margin-lg);
 }
 
 /* Inline code */

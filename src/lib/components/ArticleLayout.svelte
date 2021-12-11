@@ -5,7 +5,7 @@
 	export let seoTitle;
 </script>
 
-<article>
+<article class="article">
 	<SEO {title} description={seoTitle} />
 	<h1>{title}</h1>
 	<slot />

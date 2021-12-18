@@ -1,0 +1,75 @@
+---
+  layout: article
+  title: "Uses"
+  shortDescription: "John Skender's hardware and software setup for web development."
+  seoTitle: "John Skender's hardware and software setup for web development."
+  isPublished: true
+  createdOn: 2020-09-22
+  updatedOn: 2020-09-22
+---
+
+<script>
+  import gamingSetup from "$lib/assets/images/uses/gaming_setup.jpg?format=webp"
+  import mainSetup from "$lib/assets/images/uses/main_setup.jpg?format=webp"
+
+</script>
+
+
+## Hardware
+![John Skender's desk and hardware]({mainSetup})
+- [Macbook Pro 16 inch](https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-gray-10-core-cpu-32-core-gpu-1tb)
+  - M1 Max 10-core CPU, 32-core GPU
+  - 32GB Ram
+  - 1TB Storage
+- [LG 34WN780-B UltraWide Monitor](https://amzn.to/3yHTCDt)
+- [Samson Q2U Microphone](https://www.amazon.com/dp/B001R747SG?tag=emilykearbey-20)
+- [Elgato Low Profile Mic Arm](https://www.amazon.com/dp/B097376LKF?tag=emilykearbey-20)
+- [2 Elgato Key Light Air Lights](https://www.amazon.com/dp/B082QHRZFW?tag=emilykearbey-20)
+- [Sony ZV1 Camera](https://www.amazon.com/dp/B08965JV8D?tag=emilykearbey-20)
+  - Mounted with [Elgato Multi Mount](https://www.amazon.com/dp/B07X49967V?tag=emilykearbey-20)
+  - Captured as webcam with [Elgato Cam Link 4k](https://www.amazon.com/dp/B07K3FN5MR?tag=emilykearbey-20)
+- [Keychron Q1 Mechanical Keyboard](https://www.keychron.com/products/keychron-q1)
+- [Logitech MX Master 3 Mouse](https://www.amazon.com/dp/B07S395RWD?tag=emilykearbey-20)
+- [HP Thunderbolt Dock](https://www.amazon.com/dp/B07K3FN5MR?tag=emilykearbey-20)
+- [Herman Miller Embody Chair](https://www.hermanmiller.com/products/seating/office-chairs/embody-chairs/)
+- [Focusrite Scarlet Solo Audio Interface](https://www.amazon.com/dp/B07QR6Z1JB?tag=emilykearbey-20)
+- [Kanto 2 Channel Powered Bookshelf Speakers](https://www.amazon.com/dp/B00GMPDA9K?tag=emilykearbey-20)
+- [Uplift Standing Desk](https://www.upliftdesk.com/uplift-v2-standing-desk-v2-or-v2-commercial/)
+
+## Development Setup
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [iTerm 2](https://iterm2.com/)
+- [Fig](https://fig.io/)
+- [ZSH](https://ohmyz.sh/)
+- [My Dotfiles](https://github.com/jnskender/dotfiles)
+
+## ServiceNow Utilities
+- [ServiceNow® Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ServiceNow.now-vscode)
+- [Service Portal Snippets](https://marketplace.visualstudio.com/items?itemName=stevengregory.service-portal-snippets)
+- [Xplore: Developer Toolkit](https://developer.servicenow.com/connect.do#!/share/contents/9650888_xplore_developer_toolkit?t=PRODUCT_DETAILS)
+- [ServiceNow CLI](https://docs.servicenow.com/bundle/rome-application-development/page/build/servicenow-cli/concept/servicenow-cli.html)
+
+## Gaming Hardware
+![John Skender's gaming desk and hardware]({gamingSetup})
+- [AW3418DW 120hz 1440p Ultrawide](https://www.amazon.com/dp/B07FLJWZHL?tag=emilykearbey-20)
+- [My PC](https://pcpartpicker.com/user/jnskender/builds/#view=Cvhypg)
+  - Intel Core i7 8700k
+  - EVGA CLC 240 Liquid CPU Cooler
+  - EVGA Z370 FTW Motherboard
+  - Corsair Vengeance LPX 16GB RAM
+  - HP EX920 1TB M.2
+  - Samsung 970 Evo 500GB
+  - NVIDIA GeForce RTX 2080 8GB Founders Edition
+  - Fractal Design Meshify C ATX Mid Tower Case
+  - EVGA G2 650 W 80+ Power Supply
+- [Logitech G502 Wired](https://www.amazon.com/dp/B07GBZ4Q68?tag=emilykearbey-20)
+- [G915 Wireless Clicky](https://www.amazon.com/dp/B07GBZ4Q68?tag=emilykearbey-20)
+
+## Networking
+- [Ubiquiti USG Router](https://www.ui.com/unifi-routing/usg/)
+- [Ubiquiti Cloud Key](https://www.amazon.com/dp/B017T2QB22?tag=emilykearbey-20)
+- [Ubiquiti 8 Port PoE Switch](https://www.amazon.com/dp/B01N362YPG?tag=emilykearbey-20)
+- [Ubiquiti AC Lite AP](https://www.amazon.com/dp/B01LXSMY1N?tag=emilykearbey-20)
+- [Ubiquiti UAP-AC-M AP](https://www.amazon.com/dp/B01N9FIELY?tag=emilykearbey-20)
+- [Synology 2 bay NAS DS220j](https://www.amazon.com/dp/B01N362YPG?tag=emilykearbey-20)
+- [Rasbperry Pi 4](https://www.amazon.com/dp/B01LXSMY1N?tag=emilykearbey-20) running [Homebridge](https://homebridge.io/)

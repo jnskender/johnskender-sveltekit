@@ -148,6 +148,12 @@ image {
 	margin-bottom: var(--margin-m);
 }
 
+article ul ul {
+	list-style: inside;
+	margin-left: var(--margin-m);
+	margin-bottom: 0;
+}
+
 .article p {
 	margin-bottom: var(--margin-lg);
 }

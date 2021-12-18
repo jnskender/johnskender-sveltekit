@@ -25,7 +25,7 @@
 
 <SEO
 	title="Home"
-	description="Tutorials and interactive articles focusing on ServiceNow, Javascript, and Web Development."
+	description="John Skender creates tutorials and interactive articles focusing on ServiceNow, Javascript, and Web Development."
 />
 
 <section class="hero">

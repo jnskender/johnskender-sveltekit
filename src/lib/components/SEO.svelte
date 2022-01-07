@@ -3,14 +3,33 @@
 
 	export let title;
 	export let description;
+	export let slug;
+	export let openGraph;
 
-	const { siteLanguage, siteTitle } = config.website;
+	const { siteLanguage, siteTitle, url } = config.website;
 </script>
 
 <svelte:head>
-	<title>{title} | {siteTitle}</title>
+	{#if title}
+		<title>{title} | {siteTitle}</title>
+	{:else}
+		<title>{siteTitle}</title>
+	{/if}
 
-	<meta name="description" content={description} />
+	{#if description}
+		<meta name="description" content={description} />
+	{/if}
+
+	{#if openGraph}
+		<meta property="og:title" content={openGraph.title} />
+
+		<meta property="og:description" content={openGraph.description} />
+
+		<meta property="og:type" content={openGraph.type || 'website'} />
+
+		<meta property="og:url" content={url + '/' + slug} />
+		<meta property="og:image" content={url + '/' + openGraph.image} />
+	{/if}
 
 	<meta
 		name="robots"

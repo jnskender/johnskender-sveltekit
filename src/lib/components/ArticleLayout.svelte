@@ -3,10 +3,22 @@
 
 	export let title;
 	export let seoTitle;
+	export let seoImage;
+	export let slug;
 </script>
 
 <article class="article">
-	<SEO {title} description={seoTitle} />
+	<SEO
+		{title}
+		description={seoTitle}
+		openGraph={{
+			title,
+			type: 'article',
+			image: seoImage,
+			description: seoTitle
+		}}
+		slug={'articles/' + slug}
+	/>
 	<h1>{title}</h1>
 	<slot />
 </article>

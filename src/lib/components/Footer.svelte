@@ -24,6 +24,12 @@
 			{/each}
 		</ul>
 	</div>
+	<div class="seperator">
+		<span class="title">Extras</span>
+		<ul>
+			<li><a href="/uses">Uses</a></li>
+		</ul>
+	</div>
 </section>
 
 <style>

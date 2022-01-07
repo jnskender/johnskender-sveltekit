@@ -5,6 +5,8 @@
   moment.js, in ServiceNow. You'll be able to utilize handy date utilities in
   client scripts, business rules, and script includes after this guide."
   isPublished: true
+  seoImage: "/open-graph-images/moment-open-graph.webp"
+  slug: "moment-servicenow"
   createdOn: 2020-09-22
   updatedOn: 2020-09-22
 ---

@@ -7,7 +7,6 @@
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/articles">Articles</a></li>
-			<li><a href="/uses">Uses</a></li>
 		</ul>
 	</nav>
 	<HR />

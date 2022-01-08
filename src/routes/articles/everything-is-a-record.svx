@@ -3,7 +3,7 @@
   title: "Everything is a Record"
   seoTitle: "What is the most important thing a ServiceNow developer should know? Everything in ServiceNow is a record."
   isPublished: true
-  seoImage: "/open-graph-images/everything-is-a-record.webp"
+  seoImage: "/open-graph-images/everything-is-a-record.jpg"
   slug: "everything-is-a-record"
   createdOn: 2022-01-07
   updatedOn: 2022-01-07

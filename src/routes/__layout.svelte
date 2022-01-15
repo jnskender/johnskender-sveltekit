@@ -4,7 +4,7 @@
 	import Page from '$lib/components/Page.svelte';
 	import '@fontsource/inter';
 	import '@fontsource/fira-code';
-	import '../styles/reset.css';
+	import '../styles/normalize.css';
 	import '../styles/app.css';
 	import '../styles/prism.css';
 </script>

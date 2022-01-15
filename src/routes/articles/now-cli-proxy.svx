@@ -3,7 +3,9 @@ layout: article
 title: How to use the ServiceNow CLI behind a proxy server
 socialImage: /media/now-cli-proxy.png
 isPublished: true
-date: 2021-05-08T19:54:16.114Z
+createdOn: 2021-05-08
+updatedOn: 2021-05-08
+slug: "now-cli-proxy"
 seoTitle: "Learn how you can utilize this new tool in the high chance that your company tunnels all of their traffic through a proxy server. "
 ---
 

@@ -1,24 +1,8 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
-		const url = `./articles.json`;
-		const response = await fetch(url);
-
-		if (response.ok) {
-			return {
-				props: { ...(await response.json()) }
-			};
-		}
-
-		return {};
-	}
-</script>
-
 <script>
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
-	export let articles;
+	const articles = Object.values(import.meta.globEager('./articles/*.svx'))
+		.map((article) => article.metadata)
+		.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn)); // most recent on the top
 </script>
 
 <ArticlesList {articles} />

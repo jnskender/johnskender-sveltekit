@@ -11,6 +11,9 @@
 
 <svelte:head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script>
+		let FF_FOUC_FIX;
+	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVLYV7EXZM"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];

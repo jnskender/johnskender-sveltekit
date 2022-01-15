@@ -3,20 +3,20 @@
 	export let article;
 </script>
 
-<!-- markup (zero or more items) goes here -->
-
-<div class="article-card">
-	<article>
-		<a href={`articles/${article.slug}`}>
-			<h2>{article.title}</h2>
-			<p class="preview">{article.preview}</p>
-			<div class="read-more">
-				<p>Read more</p>
-				<Icon name="arrow-right" />
-			</div>
-		</a>
-	</article>
-</div>
+{#if article}
+	<div class="article-card">
+		<article>
+			<a href={`articles/${article.slug}`}>
+				<h2>{article.title}</h2>
+				<p class="preview">{article.seoTitle}</p>
+				<div class="read-more">
+					<p>Read more</p>
+					<Icon name="arrow-right" />
+				</div>
+			</a>
+		</article>
+	</div>
+{/if}
 
 <style>
 	.article-card {

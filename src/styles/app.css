@@ -170,7 +170,7 @@ article :not(pre) code {
 
 code[class*='language-'],
 pre[class*='language-'] {
-	font-family: Fira Code, Roboto Mono, monospace;
+	font-family: Fira Code, Roboto Mono, monospace !important;
 	border-radius: 5px;
 	color: var(--white);
 	margin-bottom: var(--margin-lg);

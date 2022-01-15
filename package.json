@@ -10,8 +10,6 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "slugify": "^1.6.5",
-    "readline-promise": "^1.0.5",
     "@netlify/plugin-sitemap": "^0.8.1",
     "@sveltejs/adapter-netlify": "^1.0.0-next.35",
     "@sveltejs/adapter-static": "next",
@@ -22,11 +20,15 @@
     "mdsvex": "^0.9.8",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.1",
+    "readline-promise": "^1.0.5",
+    "slugify": "^1.6.5",
     "svelte": "^3.44.2",
     "vite-imagetools": "^4.0.1"
   },
   "type": "module",
   "dependencies": {
+    "@fontsource/fira-code": "^4.5.2",
+    "@fontsource/inter": "^4.5.1",
     "@supabase/supabase-js": "^1.28.5",
     "feather-icons": "^4.28.0",
     "rehype-external-links": "^1.0.0",

@@ -4,7 +4,7 @@
   shortDescription: "Learn how to log like a pro in ServiceNow. Increase performance and resolve issues quicker."
   seoTitle: "Learn how to log like a pro in ServiceNow. Increase performance and resolve issues quicker."
   seoImage: "/open-graph-images/logging-graph.jpg"
-  slug: "servicenow-logging-best-practices"
+  slug: "logging-performance-and-practices"
   isPublished: true
   createdOn: 2022-01-14
   updatedOn: 2022-01-14

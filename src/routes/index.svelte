@@ -20,7 +20,11 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
-	export let articles;
+
+	const articles = Object.values(import.meta.globEager('./articles/*.svx'))
+		.map((article) => article.metadata)
+		.sort((a, b) => new Date(b.createdOn).valueOf() - new Date(a.createdOn).valueOf()) // most recent on the top
+		.slice(0, 3); //top 3 articles
 </script>
 
 <SEO

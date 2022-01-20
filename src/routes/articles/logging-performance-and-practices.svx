@@ -16,9 +16,9 @@ This is understandable as most of us are primarily javascript developers and the
 
 The crux of this issue is that this ```gs.log()``` _does_ have considerable performance implications.
 
-It wasn't until I visualized what that method is doing behind the scenes that I gained a mindset when approaching logs.
+Understanding the implementation of ```gs.log()``` provided encouraged me to approach logging with greater intention.
 
-Under the hood ```gs.log("Hello World")```  has a similar implementation as the following example.
+Under the hood ```gs.log("Hello World")```'s implementation can be visualized as:
 
 ```javascript
 	function log(message) {
@@ -32,7 +32,7 @@ Under the hood ```gs.log("Hello World")```  has a similar implementation as the 
 
 This means that any ```gs.log()```, ```gs.warning()```, ```gs.error()```, ```gs.debug()``` is a database transaction on the sys_log table.
 
-When optimizing a script or performing code review, we as developers are hyper sensitive to the over usage of GlideRecord to ensure our production code is as quick and performant as possible. Sometimes we do this while thoughtlessly leaving 5 ```gs.log()```'s in that same script, destroying all of our optimization work in the process.
+When optimizing a script or performing code review, we as developers are hyper sensitive to the over usage of GlideRecord to ensure our production code is as quick and performant as possible. In contradiction to that mindset, we often we leave a number ```gs.log()```'s or ```gs.info()```'s in that same script, negating some or all of our optimization work in the process.
 
 Mostly, we do this in good faith to increase the observability of our applications. Other times the logs are left as a relic of our debugging efforts we made as we developed our applications. They were never meant to be in production.
 
@@ -69,7 +69,7 @@ try {
 
 This fictional example sends a REST message to twitters API to post a tweet. It has a logging pattern that I see quite often when review integration code.
 
-While developing, the developer uses a couple of ```gs.info()```'s to help give them information as they develop the feature.
+While implementing a new feature, the dev uses a couple of ```gs.info()```'s to help them debug their script.
 
 The developer also includes an ```gs.error()``` to capture if something goes wrong with the request.
 
@@ -80,6 +80,8 @@ The user's of the feature end up loving the developers handy work and on the fir
 Without knowing it, this developer introduced **2,000** new database transactions on average per day to the instance.
 
 Now imagine this situation takes place over multiple developers in multiple applications over a number of years in the lifetime of your instance. You can see how this can get out of hand fast if we don't have a strategy for our logs.
+
+I have seen logs like the one above generate as many as 300,000+ logs/db transactions per day for a single new feature.
 
 Let's explore the toggle architecture to reduce these two logs from constantly running in the background.
 
@@ -149,11 +151,11 @@ This way our warning and errors still get logged but our debugs will only begin 
 
 We've tackled the performance issue with logs so let's dive into some area's that will increase the effectiveness of our logs.
 
-Having well constructed logs will make it easier for you to monitor and observe the status of your applications, find relevant log messages in the haystack that is the sys_log table, and ultimately solve issues faster.
+Having well constructed logs will make it easier for you to monitor and observe the status of your applications, find relevant log messages in the haystack that is the sys_log table, and ultimately resolve issues faster.
 
 Log sourcing is simply the addition of a qualifier to your logs so that you can group similar log messages.
 
-In my example I mind add a source of "Twitter Spoke Rest Messages" as a second parameter to my log functions so that I can easily group all logs by that source.
+In my example I would add a source of "Twitter Spoke Rest Messages" as a second parameter to my log functions so that I can easily group all logs by that source.
 
 ```javascript
 try {
@@ -241,7 +243,7 @@ try {
 
 This pattern of wrapping your debug message into a formatted JSON object helps us reduce the amount of logs written to the DB while telling a complete story about what happened in that particular REST Message.
 
-Including who was trying to Tweet is helpful to future us to determine any access related issues.
+Including additional information like who was trying to Tweet is helpful to our future selves as it can help determine any access related issues.
 
 ### I want to know if my code is not working.
 

@@ -1,20 +1,3 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
-		const response = await fetch('./index.json');
-
-		if (response.ok) {
-			return {
-				props: { ...(await response.json()) }
-			};
-		}
-
-		return {};
-	}
-</script>
-
 <script>
 	import Avatar from '$lib/components/Avatar.svelte';
 	import SEO from '$lib/components/SEO.svelte';
@@ -23,7 +6,7 @@
 
 	const articles = Object.values(import.meta.globEager('./articles/*.svx'))
 		.map((article) => article.metadata)
-		.sort((a, b) => new Date(b.createdOn).valueOf() - new Date(a.createdOn).valueOf()) // most recent on the top
+		.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn)) // most recent on the top
 		.slice(0, 3); //top 3 articles
 </script>
 

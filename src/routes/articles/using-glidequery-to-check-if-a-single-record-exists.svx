@@ -1,0 +1,13 @@
+---
+layout: article
+title: Using GlideQuery to check if a single record exists
+createdOn: 2022-02-04
+updatedOn: 2022-02-04
+author: John Skender
+isPublished: true
+shortDescription: How you can use GlideQuery to check if a single ServiceNow record exists.
+seoTitle: How you can use GlideQuery to check if a single ServiceNow record exists.
+
+---
+## Heading
+content here

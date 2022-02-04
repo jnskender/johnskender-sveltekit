@@ -83,6 +83,7 @@
 			var(--color-bright) 50%,
 			var(--orange-yellow-crayola) 100%
 		);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}

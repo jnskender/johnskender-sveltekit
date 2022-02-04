@@ -1,20 +1,18 @@
 import config from '$lib/config/website';
-import { getArticles } from "$lib/utils/blog.js"
-
+import { getArticles } from '$lib/utils/blog.js';
 
 export async function get() {
+	const articles = await getArticles();
+	const websiteURl = config.website.url;
+	const pages = ['articles'];
 
-  const articles = await getArticles();
-  const websiteURl = config.website.url;
-  const pages = ['articles']
-
-  const headers = {
-    'Cache-Control': 'max-age=0, s-maxage=3600',
-    'Content-Type': 'application/xml',
-  }
-  return {
-    headers,
-    body: `<?xml version="1.0" encoding="UTF-8" ?>
+	const headers = {
+		'Cache-Control': 'max-age=0, s-maxage=3600',
+		'Content-Type': 'application/xml'
+	};
+	return {
+		headers,
+		body: `<?xml version="1.0" encoding="UTF-8" ?>
     <urlset
       xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
@@ -29,29 +27,29 @@ export async function get() {
       <priority>0.7</priority>
     </url>
     ${pages
-        .map(
-          page => `
+			.map(
+				(page) => `
     <url>
       <loc>${websiteURl}/${page}</loc>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
     </url>
     `
-        )
-        .join('')}
+			)
+			.join('')}
     ${articles
-        .map(article =>
-          !article.isPublished
-            ? null
-            : `
+			.map((article) =>
+				!article.isPublished
+					? null
+					: `
     <url>
       <loc>${websiteURl}/articles/${article.slug}</loc>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
     </url>
     `
-        )
-        .join('')}
-    </urlset>`,
-  }
+			)
+			.join('')}
+    </urlset>`
+	};
 }

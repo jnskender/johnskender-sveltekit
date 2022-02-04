@@ -47,7 +47,7 @@ isPublished: true
 shortDescription: ${shortDescription}
 seoTitle: ${shortDescription}
 slug: ${permalink}
-seoImage: "/open-graph-images/${permalink}.webp"
+seoImage: "/open-graph-images/${permalink}.jpg"
 ---
 ## Heading
 content here`

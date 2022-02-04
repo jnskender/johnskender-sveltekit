@@ -7,7 +7,7 @@ author: John Skender
 isPublished: true
 shortDescription: How to check if a single record exists using GlideQuery.
 seoTitle: How to check if a single record exists using GlideQuery.
-seoImage: "/open-graph-images/using-glidequery-to-check-if-a-single-record-exists.webp"
+seoImage: "open-graph-images/using-glidequery-to-check-if-a-single-record-exists.jpg"
 slug: using-glidequery-to-check-if-a-single-record-exists
 ---
 
@@ -24,12 +24,13 @@ function userHasActiveIncident() {
   incidentGA.addQuery("assigned_to", gs.getUserID());
   incidentGA.addActiveQuery();
   incidentGA.addAggregate("COUNT");
-  incidentGA.query();
 
-  if (incidentGA.next()) {
-    var count = parseInt(incidentGA.getAggregate("COUNT"));
-    return count > 0;
-  }
+  incidentGA.query();
+  incidentGA.next();
+
+  var count = parseInt(incidentGA.getAggregate("COUNT"));
+  return count > 0;
+
 }
 ```
 ## GlideRecord
@@ -68,14 +69,14 @@ Let's go over some differences in these approaches that effect both the readabil
 ## Differences
 
 ### Lines of Code (LOC)
-I'll admit, this is generally a silly metric to compare approaches. Having fewer lines of code only matters if those lines are clear and readable to the next dev. "Clear is better than clever".
+I'll admit, this is generally a silly metric to compare approaches. Having fewer lines of code only matters if those lines convey the functionality clearly to reading developer. **Clear is better than clever**.
 
 In this case I think it's a valid metric because I believe the intent of all three approaches equally clear. The fact that GlideQuery is able to be clear **with** fewer LOC's makes it the winner in this case.
 
 ### Maintainability
-The maintainability is *fairly* equal across all three approaches.
+The maintainability *appears* to be equal across all three approaches.
 
-If the requirements changed to make sure this API only includes active incidents where the state is Open, it would be trivial for a developer to update the API to account for this.
+Consider the requirements changed to make sure this API only includes active incidents where the state is Open. It would be trivial for a developer to update the API to account for this.
 
 For the three approaches you would add
 
@@ -127,3 +128,19 @@ This is just an added step that the ```GlideAggregate``` makes us perform.
 
 ### Feature parity
 ```GlideQuery``` still doesn't have support for encoded queries and may not match ```GlideRecord``` and ```GlideAggregate``` in feature set quite yet. I still make it a point to use GlideQuery first and only switch to GR or GA when GQ does not satisfy a use case.
+
+### Mutability
+When possible you should [prefer immutable API's over their mutable counterparts](https://gomakethings.com/mutable-vs.-immutable-in-javascript/).
+
+```GlideQuery``` wins out in the case as well as it's the only API for interacting with ServiceNow records that is immutable.
+
+This gives the added advantage of being able to reuse your GlideQueries in the same script as well as a codebase that's is more resilient to unintended side effects.
+
+## Wrap Up
+In most situations you should be reaching for GlideQuery when interacting with the database as it has a huge list of benefits.
+
+* Standard JavaScript Typing
+* Single API to query data and perform aggregations.
+* Immutable
+* Clearer, modern, concise syntax
+* Safer queries with clearer error handling

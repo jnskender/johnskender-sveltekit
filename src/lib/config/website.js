@@ -1,7 +1,7 @@
 export default {
 	website: {
 		author: 'John Skender',
-		url: 'https://www.johnskender.com',
+		url: import.meta.env.VITE_SITE_URL,
 		ogLanguage: 'en_US',
 		siteLanguage: 'en-US',
 		siteTitle: 'John Skender',

@@ -28,7 +28,7 @@
 		<meta property="og:type" content={openGraph.type || 'website'} />
 
 		<meta property="og:url" content={url + '/' + slug} />
-		<meta property="og:image" content={url + openGraph.image} />
+		<meta property="og:image" content={url + '/' + openGraph.image} />
 	{/if}
 
 	<meta

@@ -5,8 +5,8 @@ createdOn: 2022-02-04
 updatedOn: 2022-02-04
 author: John Skender
 isPublished: true
-shortDescription: How to check if a single record exists using GlideQuery.
-seoTitle: How to check if a single record exists using GlideQuery.
+shortDescription: How would you check if a single record exists in ServiceNow?
+seoTitle: How would you check if a single record exists in ServiceNow?
 seoImage: "open-graph-images/using-glidequery-to-check-if-a-single-record-exists.jpg"
 slug: using-glidequery-to-check-if-a-single-record-exists
 ---

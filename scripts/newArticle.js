@@ -36,7 +36,7 @@ async function prompt() {
 }
 
 // generate the markdown file with frontmatter
-async function generate(path, { title, date, shortDescription }) {
+async function generate(path, { title, date, shortDescription, permalink }) {
   const template = `---
 layout: article
 title: ${title}
@@ -46,6 +46,7 @@ author: John Skender
 isPublished: true
 shortDescription: ${shortDescription}
 seoTitle: ${shortDescription}
+slug: ${permalink}
 
 ---
 ## Heading
@@ -73,7 +74,7 @@ const path = `src/routes/articles/${permalink}.svx`
 const date = new Date().toISOString().split('T')[0]
 
 // write the template to the file system
-await generate(path, { title, shortDescription, date })
+await generate(path, { title, shortDescription, date, permalink })
 
 console.log(`+ created: ${path}`)
 

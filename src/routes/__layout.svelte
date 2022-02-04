@@ -2,11 +2,11 @@
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Page from '$lib/components/Page.svelte';
-	import '@fontsource/inter/variable.css';
-	import '@fontsource/fira-code';
 	import '../styles/normalize.css';
 	import '../styles/app.css';
 	import '../styles/prism.css';
+	import '@fontsource/inter/variable.css';
+	import '@fontsource/fira-code';
 </script>
 
 <svelte:head>

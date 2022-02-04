@@ -4,20 +4,20 @@ https://www.johnskender.com
 
 My personal website for sharing information and playing with new technology.
 
-
 ## Built With
+
 - [SvelteKit](https://kit.svelte.dev/)
 - [mdsvex](https://kit.svelte.dev/)
   - For rendering markdown articles with the ability to include svelte components in the markup
 - [vite imagetools](https://github.com/JonasKruckenberg/imagetools)
   - Crazy fast and easy image processing and optimization
 
-
 ## Deployed with Netlify
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e3a84d5e-7cde-4de6-9041-4d5e7d4e83ec/deploy-status)](https://app.netlify.com/sites/johnskender/deploys)
 
-  - [@sveltjs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
-    - SSG using adapter static
+- [@sveltjs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
+  - SSG using adapter static
 - [netlify sitemap plugin](https://github.com/netlify-labs/netlify-plugin-sitemap)
   - generating a sitemap automatically on each build
 

@@ -3,7 +3,9 @@
 </script>
 
 # John Skender
+
 ## Software Engineer
+
 <Avatar />
 
 <style>

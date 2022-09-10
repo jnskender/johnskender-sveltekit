@@ -1,5 +1,5 @@
 import { mdsvex } from 'mdsvex';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-netlify';
 import mdsvexConfig from './mdsvex.config.js';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

@@ -5,9 +5,6 @@ import mdsvexConfig from './mdsvex.config.js';
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	kit: {
-		files: {
-			assets: 'static'
-		},
 		adapter: adapter(),
 		// hydrate the <div id="svelte"> element in src/app.html
 	},

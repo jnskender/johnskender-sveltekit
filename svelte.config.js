@@ -5,7 +5,7 @@ import mdsvexConfig from './mdsvex.config.js';
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({edge: true}),
 		// hydrate the <div id="svelte"> element in src/app.html
 	},
 	layout: './src/components/ArticleLayout.svelte',

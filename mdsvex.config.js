@@ -9,6 +9,7 @@ const config = {
 	},
 	layout: {
 		article: 'src/lib/components/ArticleLayout.svelte',
+		snippet: 'src/lib/components/SnippetLayout.svelte',
 		_: 'src/lib/components/DefaultLayout.svelte'
 	},
 	remarkPlugins: [],

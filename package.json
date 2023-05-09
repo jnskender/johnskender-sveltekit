@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "article:new": "node scripts/newArticle.js",
+    "snippet:new": "node scripts/newSnippet.js",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",

@@ -5,11 +5,14 @@
 	import '../styles/normalize.css';
 	import '../styles/app.css';
 	import '../styles/prism.css';
-	import '@fontsource/inter/variable.css';
+	import '@fontsource-variable/inter';
 	import '@fontsource/fira-code';
 </script>
 
 <svelte:head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVLYV7EXZM"></script>
 	<script>

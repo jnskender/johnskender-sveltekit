@@ -10,11 +10,7 @@
 </script>
 
 <svelte:head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVLYV7EXZM"></script>
+	<script async src="https://www.googletagmanager.com/gtag/s?id=G-SVLYV7EXZM"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {

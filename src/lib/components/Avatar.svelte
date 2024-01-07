@@ -1,11 +1,13 @@
 <script>
-	import image from '$lib/assets/images/me.jpg?width=250&height=250&format=webp';
+	import image from '$lib/assets/images/me.jpg?enhanced&w=250&h=250';
 </script>
 
-<img src={image} alt="John Skender" />
+<enhanced:img class="avatar" src={image} alt="John Skender" />
 
 <style>
-	img {
+	.avatar {
 		border-radius: 50%;
+		width: 250px;
+		height: 250px;
 	}
 </style>

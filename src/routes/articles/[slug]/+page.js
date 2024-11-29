@@ -1,6 +1,15 @@
 export async function load({ params }) {
-  const article = await import(`../${params.slug}.svx`)
-  return {
-    article
-  }
+	const extensions = ['svx', 'md'];
+
+	for (const ext of extensions) {
+		try {
+			const article = await import(`../${params.slug}.${ext}`);
+			return { article };
+		} catch {
+			// Continue to the next extension if this one fails
+		}
+	}
+
+	// If no files were found, throw an error
+	throw new Error('Article not found');
 }

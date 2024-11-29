@@ -1,0 +1,60 @@
+---
+layout: snippet
+title: Find or Create Record Utility in ServiceNow with applyEncodedQuery
+createdOn: 2024-11-29
+updatedOn: 2024-11-29
+author: John Skender
+isPublished: true
+shortDescription: Use undocumented function applyEncodedQuery
+seoTitle: Learn how to use the undocumented applyEncodedQuery function in GlideRecord for a powerful 'find or create' utility in ServiceNow development.
+slug: find-or-create
+---
+
+ServiceNow developers often face scenarios where they need to check if a record exists and create it if it doesn’t. The undocumented applyEncodedQuery function in GlideRecord makes this process more efficient by allowing you to create a record from an encoded query, essentially functioning as a "find or create" utility.
+
+This snippet demonstrates how to use applyEncodedQuery to check if a user exists based on certain conditions. If not, the function creates the user with the exact attributes you were searching for.
+
+### Why Use applyEncodedQuery?
+
+Using applyEncodedQuery simplifies record management by dynamically applying query conditions to new records. This reduces boilerplate code and ensures consistency between the search and the created record.
+Code Example: Find or Create a User
+
+Here’s how you can use applyEncodedQuery in ServiceNow:
+
+```js
+var userGR = new GlideRecord("sys_user");
+userGR.addQuery("user_name", "john.skender");
+userGR.addQuery("name", "John Skender");
+userGR.setLimit(1);
+
+// If record exists, return it
+if (userGR.next()) return userGR;
+
+// Generate an encoded query string from the conditions above
+var encodedQuery = userGR.getEncodedQuery();
+
+// Create a new record and apply the encoded query
+userGR.newRecord();
+userGR.applyEncodedQuery(encodedQuery);
+
+// Insert the new record
+userGR.insert();
+return userGR;
+```
+
+### Key Points to Remember
+
+`getEncodedQuery`: Converts existing addQuery conditions into an encoded query string.
+
+`applyEncodedQuery`: Applies the encoded query to a new record, setting field values automatically.
+
+This approach ensures that the record creation mirrors the query conditions exactly. In this case, there will be a new user with `user_name` "john.skender" and `name` "John Skender" created.
+
+If we were to run this code again, it would no longer create the user since one would already exist in the system, meaning our code is [idempotent](https://en.wikipedia.org/wiki/Idempotence).
+
+### Practical Applications
+
+- Creating users, groups, or other entities dynamically based on query parameters.
+- Ensuring consistent data structure during automated record creation.
+- Reducing repetitive code when handling multiple conditional checks.
+- Creating idempotent code, allowing it to be run without changing the initial result beyond the initial application.

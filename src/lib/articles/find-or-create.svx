@@ -7,7 +7,6 @@ author: John Skender
 isPublished: true
 shortDescription: Use undocumented function applyEncodedQuery
 seoTitle: Learn how to use the undocumented applyEncodedQuery function in GlideRecord for a powerful 'find or create' utility in ServiceNow development.
-slug: find-or-create
 ---
 
 ServiceNow developers often face scenarios where they need to check if a record exists and create it if it doesn’t. The undocumented applyEncodedQuery function in GlideRecord makes this process more efficient by allowing you to create a record from an encoded query, essentially functioning as a "find or create" utility.

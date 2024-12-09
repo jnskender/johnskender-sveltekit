@@ -7,7 +7,6 @@ author: John Skender
 isPublished: true
 shortDescription: Understand storage size of your attachments for tables in ServiceNow
 seoTitle: Find Total Size of ServiceNow Attachments
-slug: attachment-size
 seoImage: "open-graph-images/attachment-size.png"
 ---
 ```javascript

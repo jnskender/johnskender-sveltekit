@@ -3,7 +3,7 @@ export async function load({ params }) {
 
 	for (const ext of extensions) {
 		try {
-			const article = await import(`../${params.slug}.${ext}`);
+			const article = await import(`$lib/articles/${params.slug}.${ext}`);
 			return { article };
 		} catch {
 			// Continue to the next extension if this one fails

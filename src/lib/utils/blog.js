@@ -1,6 +1,24 @@
 import fs from 'fs';
 import path from 'path';
 import { compile } from 'mdsvex';
+
+export const getArticlesForRender = () => {
+	const articles = Object.entries(
+		import.meta.glob('$lib/articles/*.{svx,md}', { eager: true })
+	).map(([path, article]) => {
+		console.log(path);
+		const slug = path
+			.split('/')
+			.pop()
+			.replace(/\.(svx|md)$/, ''); //remove file extension
+		return {
+			...article.metadata,
+			slug
+		};
+	});
+	return articles;
+};
+
 /**
  *
  * @param {string} location the path where the articles are stored

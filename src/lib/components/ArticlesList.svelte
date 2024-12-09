@@ -1,7 +1,6 @@
 <script>
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 	export let articles;
-	console.log(articles);
 </script>
 
 {#if articles}

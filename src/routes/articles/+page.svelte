@@ -1,8 +1,8 @@
 <script>
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
-	import { getArticlesForRender } from '$lib/utils/blog.js';
+	import { getArticles } from '$lib/utils/blog.js';
 
-	const articles = getArticlesForRender();
+	const articles = getArticles();
 	articles
 		.filter((article) => article.isPublished)
 		.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn)); // most recent on the top

@@ -3,9 +3,9 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import ArticlesList from '$lib/components/ArticlesList.svelte';
-	import { getArticlesForRender } from '$lib/utils/blog.js';
+	import { getArticles } from '$lib/utils/blog.js';
 
-	const articles = getArticlesForRender()
+	const articles = getArticles()
 		.filter((article) => article.isPublished)
 		.slice(0, 3) //top 3 articles
 		.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn)); // most recent on the top

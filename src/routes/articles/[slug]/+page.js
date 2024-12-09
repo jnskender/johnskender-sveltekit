@@ -1,7 +1,6 @@
+import { ARTICLE_EXTENSIONS } from '$lib/utils/extensions';
 export async function load({ params }) {
-	const extensions = ['svx', 'md'];
-
-	for (const ext of extensions) {
+	for (const ext of ARTICLE_EXTENSIONS) {
 		try {
 			const article = await import(`$lib/articles/${params.slug}.${ext}`);
 			return { article };

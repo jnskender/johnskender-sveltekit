@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import { compile } from 'mdsvex';
 import { ARTICLE_EXTENSION_REGEX } from '$lib/utils/extensions';
 
 export const getArticles = () => {
